@@ -56,7 +56,7 @@ def extract_strips_from_psg(psg, mode="excerption"):
         return [psg]
 
 def knowledge_refinement(psgs, queries, output_path, model_name, device, decompose_mode):
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    tokenizer = T5Tokenizer.from_pretrained(model_name,local_files_only=True)
     model = T5ForSequenceClassification.from_pretrained(model_name, output_hidden_states=True)
     top_n = 3 if decompose_mode == "selection" else 6
 

@@ -44,6 +44,7 @@ def main():
     args = parser.parse_args()
 
     train_file = args.train_file
+    print(train_file)
     SEED = args.seed
 
     random.seed(SEED)

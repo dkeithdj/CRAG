@@ -1,0 +1,42 @@
+[project]
+name = "template"
+version = "0.1.0"
+description = "template project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    # "openai>=1.64.0",
+    # "pandas>=2.2.3",
+    # "scikit-learn>=1.6.1",
+    # "sentencepiece>=0.2.0",
+    # "tokenizers>=0.21.0",
+    # "torch>=2.5.1",
+    # "pytorch-triton-rocm",
+    # "transformers>=4.49.0",
+    # "vllm>=0.7.3",
+    "openai>=1.64.0",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "tokenizers>=0.21.0",
+    "transformers>=4.49.0",
+]
+
+[project.scripts]
+template = "template:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["ruff>=0.9.6"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-rocm" }]
+pytorch-triton-rocm = [{ index = "pytorch-rocm" }]
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm6.2"
+explicit = true

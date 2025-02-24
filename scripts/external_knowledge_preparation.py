@@ -151,7 +151,7 @@ def visit_pages(questions, web_results, output_file, model_name, device, mode):
                     model=model,
                     device=device,
                     top_n=top_n,
-                    mode="cross_encode"
+                    # mode="cross_encode"
                 )
         i += 1
         output_results.append(results.replace('\n', ' '))
